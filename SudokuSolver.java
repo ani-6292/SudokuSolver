@@ -84,7 +84,6 @@ public class SudokuSolver {
 	//Print solved Sudoku
 	static void print(int[][] grid)
     {
-		System.out.println("Solved Sudoku:\n");
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
             {
@@ -117,14 +116,19 @@ public class SudokuSolver {
                 		 		  { 0, 2, 0, 6, 5, 0, 4, 0, 0 },
                 		 		  { 9, 5, 3, 0, 2, 0, 0, 8, 7 } };
 		
+		System.out.println("Sudoku to solve:");
+		System.out.println("*Note: Empty cells are denoted by 0*");
+		print(sudokuToSolve);
+		System.out.println();
+		
 		if (solveSudoku(sudokuToSolve, 0, 0))
+		{
+			System.out.println("Solved Sudoku:");
             print(sudokuToSolve);
+		}
         
 		else
             System.out.println("No Solution exists");
-		
-		
 	}
 	
 }
-
